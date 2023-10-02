@@ -15,7 +15,7 @@ module.exports = {
     // Get single user by Id
     async getSingleUser (req,res) {
         try {
-            const user = await Student.findOne({_id: req.params.userId});
+            const user = await User.findOne({_id: req.params.userId});
 
             if (!user){
                 return res.status(404).json({message: 'No user with that ID'})
@@ -27,7 +27,7 @@ module.exports = {
             return res.status(500).json(err);
         }
     },
-    //Create new suer
+    //Create new user
     async createUser (req,res) {
         try {
             const user = await User.create(req.body);
