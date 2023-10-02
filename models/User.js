@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 // const thoughtSchema = require('./Thought');
 
-var validateEmail = function(email){
+const validateEmail = function(email){
     var re = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,6}$/
     return re.test(email)
 }
@@ -49,4 +49,4 @@ userSchema
 
 const User = model('user', userSchema);
 
-model.exports = User;
+module.exports = User;

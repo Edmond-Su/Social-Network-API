@@ -11,7 +11,13 @@ const thoughtSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now
-        }
+        },
+        username: {
+            type: String,
+            require: true,
+            ref: 'User',
+        },
+        reactions: [reactionSchema]
     },
     {
         toJSON: {
@@ -24,4 +30,4 @@ const thoughtSchema = new Schema(
 
 const Thought = model('thought', thoughtSchema);
 
-module.exports = Thought
+module.exports = Thought;
